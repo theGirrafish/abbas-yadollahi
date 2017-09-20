@@ -1,11 +1,11 @@
+/*==============================*/
+/*NAV BAR CSS*/
+/*==============================*/
+
 #nav {
   border: 0;
   height: 65px;
   padding-top: 15px;
-  margin-bottom: 15px;
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
   background: transparent;
 }
 
@@ -26,16 +26,17 @@
 }
 
 #nav-brand {
-  color: white !important;
-  font-size: 1.75em !important;
+  display: flex;
+  align-items: center;
+  padding: 0;
 }
 
 #nav-item a {
   color: white !important;
-  font-size: 1.1em !important;
-  font-weight: 800 !important;
-  font-family: Garamond;
-  letter-spacing: .1em;
+  font-size: 1em !important;
+  font-weight: 500 !important;
+  font-family: proxima;
+  letter-spacing: .15em;
   text-transform: uppercase;
 }
 
@@ -43,14 +44,9 @@
   color: black !important;
 }
 
-.Img {
-  height: 600px;
-  filter: grayscale(1);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  -webkit-filter: grayscale(1);
-}
+/*==============================*/
+/*APP CSS*/
+/*==============================*/
 
 .App {
   text-align: center;
@@ -80,6 +76,10 @@
   height: 80px;
 }
 
+/*==============================*/
+/*RANDOM*/
+/*==============================*/
+
 .center {
   position: absolute;
   top: 30%;
@@ -88,9 +88,23 @@
   right:20%;
 }
 
+.img {
+  height: 600px;
+  filter: grayscale(1);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  -webkit-filter: grayscale(1);
+}
+
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+@font-face {
+  font-family: proxima;
+  src: url(ProximaNovaRegular.ttf);
 }
 
 body {

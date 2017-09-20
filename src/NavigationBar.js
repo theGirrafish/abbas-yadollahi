@@ -28,8 +28,8 @@ class NavigationBar extends PureComponent {
       <Navbar id="nav" className="navbar-fixed-top nav-transition">
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="/" style={{padding: "0"}}>
-                <img src={logo} alt="logo" style={{height: "2.5em"}}/>
+              <a id="nav-brand" href="/">
+                <img src={logo} alt="logo" style={{height: "2em"}}/>
               </a>
             </Navbar.Brand>
           </Navbar.Header>

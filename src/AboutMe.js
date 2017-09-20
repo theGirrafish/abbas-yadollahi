@@ -13,7 +13,7 @@ class AboutMe extends PureComponent {
   render() {
     return (
       <div className="App">
-        <div className="App-header Img" style={{backgroundImage: `url(${HeaderBg})`}}>
+        <div className="App-header img" style={{backgroundImage: `url(${HeaderBg})`}}>
           <img src={ReactLogo} className="App-logo" alt="logo"/>
           <h2>More Than Just A Developer</h2>
         </div>
