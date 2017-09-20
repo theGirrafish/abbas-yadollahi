@@ -13,7 +13,6 @@ const url = window.location.href;
 let component = (
   <div>
     <Home/>
-    <Home/>
   </div>
 );
 
@@ -34,6 +33,7 @@ const toRender = (
   <div>
     <NavigationBar/>
     {component}
+    <Home/>
   </div>
 )
 
