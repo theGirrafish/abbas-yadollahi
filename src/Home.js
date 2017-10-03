@@ -1,6 +1,5 @@
 import React, {PureComponent} from 'react';
 import HeaderBg from './code.jpg';
-import ReactLogo from './reactlogo.svg';
 
 class Home extends PureComponent {
   render() {
@@ -8,8 +7,10 @@ class Home extends PureComponent {
       <div className="App">
         <div className="App-header img" style={{backgroundImage: `url(${HeaderBg})`}}>
           <div className="center">
-            <h3>Where Abbas and Perfection Meet</h3>
-            <h1>Welcome to my Humble Abode</h1>
+            <h3>The man behind the developer</h3>
+            <h1>Abbas Yadollahi</h1>
+            <br/><br/>
+            <button className="App-button">Download Resume</button>
           </div>
         </div>
         <p className="App-intro">

@@ -7,10 +7,11 @@
   height: 65px;
   padding-top: 15px;
   background: transparent;
+  transition: all 0.5s ease;
 }
 
 #nav div.container {
-  width: 1350px;
+  width: 90vw;
 }
 
 #nav.nav-bg {
@@ -21,14 +22,11 @@
   opacity: 0.8;
 }
 
-#nav.nav-transition {
-  transition: all 0.5s ease;
-}
-
 #nav-brand {
+  margin: 0;
+  padding: 0;
   display: flex;
   align-items: center;
-  padding: 0;
 }
 
 #nav-item a {
@@ -40,9 +38,32 @@
   text-transform: uppercase;
 }
 
+#nav-item a:after {
+  width: 0;
+  border: 1px solid rgba(255, 255, 255, 0);
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  backface-visibility: hidden;
+  transition: all 300ms ease-in-out;
+}
+
+#nav-item a:hover:after {
+  width: 100%;
+  border-color: white;
+  backface-visibility: hidden;
+  transition: width 350ms ease-in-out;
+}
+
 #nav-item.nav-text a {
   color: black !important;
 }
+
+#nav-item.nav-text a:hover:after {
+  border-color: black;
+}
+
 
 /*==============================*/
 /*APP CSS*/
@@ -62,9 +83,16 @@
 .App-header h1 {
   margin: auto;
   font-size: 4em;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: .05em;
   text-transform: uppercase;
+}
+
+.App-header h3 {
+  margin: auto;
+  font-style: italic;
+  font-family: adobe-garamond;
+  letter-spacing: .075em;
 }
 
 .App-intro {
@@ -76,14 +104,37 @@
   height: 80px;
 }
 
+.App-button {
+  color: white;
+  font-family: proxima;
+  font-size: 1.05em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+
+  padding: 1vw 2.5vw;
+  border: 2px solid white;
+
+  background-size: 0% 0%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-image: linear-gradient(white, white);
+  transition: all .3s;
+}
+
+.App-button:hover {
+  opacity: 0.9;
+  color: black;
+  background-size: 100% 100%;
+}
+
 /*==============================*/
 /*RANDOM*/
 /*==============================*/
 
 .center {
   position: absolute;
-  top: 30%;
-  bottom: 30%;
+  top: 40%;
   left: 20%;
   right:20%;
 }
@@ -105,6 +156,11 @@
 @font-face {
   font-family: proxima;
   src: url(ProximaNovaRegular.ttf);
+}
+
+@font-face {
+  font-family: adobe-garamond;
+  src: url(AdobeGaramondProRegular.ttf);
 }
 
 body {
