@@ -23,7 +23,7 @@ class WelcomePage extends PureComponent {
       <div className='background'>
         <img className='react_logo' src={Logo}/>
         <div className='text'>
-          <span className='title'>Abbas Yadollahi</spean>
+          <span className='title'>Abbas Yadollahi</span>
           <span className='subtitle'>Welcome!</span>
           <span className='subtitle'>Sorry for the inconvenience, I'm currently updating my personal webpage.</span>
           <span className='subtitle'>Come back soon!</span>
