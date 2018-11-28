@@ -1,8 +1,6 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import {mount, shallow} from 'enzyme';
 import WelcomePage from '../../src/components/WelcomePage';
-import Logo from '../assets/images/react.png';
 
 describe('WelcomePage', () => {
   it('should match the time and date shown', () => {
@@ -13,7 +11,7 @@ describe('WelcomePage', () => {
   });
 
   it('should match the time and date shown', () => {
-    var wrapper = mount(<WelcomePage/>);
+    const wrapper = mount(<WelcomePage/>);
     const time = wrapper.find('div.time').find('span.subtitle');
 
     time.props().onClick();

@@ -1,5 +1,10 @@
 const path = require('path');
+const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
 const parentDir = path.join(__dirname, '../');
+const buildDir = path.join(parentDir, 'dist');
 
 module.exports = {
   entry: [
@@ -7,7 +12,7 @@ module.exports = {
     path.join(parentDir, 'src/index.jsx')
   ],
   output: {
-    path: path.join(parentDir, 'dist'),
+    path: buildDir,
     filename: '[name].bundle.js'
   },
   module: {
@@ -27,19 +32,28 @@ module.exports = {
         loaders: ['style-loader', 'css-loader']
       }, {
         test: /\.s[a|c]ss$/,
-        loaders: ['sass-loader', 'style-loader', 'css-loader']
+        use: [
+          {loader: "style-loader"},
+          {loader: "css-loader", options: {sourceMap: true}},
+          {loader: "sass-loader", options: {sourceMap: true}}
+        ]
       }, {
         test: /\.(html)$/,
         loader: 'html-loader'
-      }, {
-        test: /\.(pdf)$/,
-        loader: 'file-loader',
       }, {
         test: /\.(png|jpg|jpeg|gif|svg|ico|eot|ttf|woff|woff2)$/,
         include: /images/,
         loader: 'url-loader',
         options: {
-          limit: 51200
+          name: '[hash:8].[ext]',
+          limit: 10240
+        }
+      }, {
+        test: /\.(pdf)$/,
+        include: /static/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]'
         }
       }
     ]
@@ -50,12 +64,24 @@ module.exports = {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          chunks: 'all',
+          chunks: 'all'
         }
       }
     }
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.css']
-  }
-}
+    extensions: ['.js', '.jsx', '.css', '.scss']
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      _: 'lodash'
+    }),
+    new CopyWebpackPlugin([{
+      from: path.join(parentDir, 'src/assets/static'),
+      to: buildDir
+    }]),
+    new CleanWebpackPlugin(buildDir, {
+      root: parentDir
+    })
+  ]
+};

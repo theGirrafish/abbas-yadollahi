@@ -32,6 +32,17 @@ class WelcomePage extends PureComponent {
           <span className='subtitle' onClick={this.showTime}>
             {this.state.displayTime ? this.state.date.toLocaleTimeString() : this.state.date.toLocaleDateString()}
           </span>
+          <span className='subtitle'>
+            <div className='btn-cont'>
+              <a className='btn' href='resume.pdf'>
+                Check out my CV!
+                <span className='line-1'></span>
+                <span className='line-2'></span>
+                <span className='line-3'></span>
+                <span className='line-4'></span>
+              </a>
+            </div>
+          </span>
         </div>
       </div>
     );

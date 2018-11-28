@@ -1,10 +1,10 @@
-var express = require('express');
+const express = require('express');
 
-var app = express();
+const app = express();
 
 app.use(express.static('dist'));
 app.set('port', process.env.PORT || 5000);
 
-var server = app.listen(app.get('port'), () => {
+const server = app.listen(app.get('port'), () => {
   console.log('Listening on port ', server.address().port);
 });

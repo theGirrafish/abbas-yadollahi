@@ -10,9 +10,6 @@ const parentDir = path.join(__dirname, '../');
 module.exports = wpMerge(common, {
   mode: 'production',
   plugins: [
-    new webpack.ProvidePlugin({
-      _: 'lodash',
-    }),
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new HtmlWebpackPlugin({
@@ -26,7 +23,7 @@ module.exports = wpMerge(common, {
       test: /\.js$|\.jsx$|\.css$|\.html$/,
       threshold: 10240,
       minRatio: 0.8
-    }),
+    })
   ],
   performance: {
     maxAssetSize: 512000,
