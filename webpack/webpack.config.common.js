@@ -1,10 +1,7 @@
 const path = require('path');
-const webpack = require('webpack');
-
 const parentDir = path.join(__dirname, '../');
 
 module.exports = {
-  mode: 'development',
   entry: [
     'babel-polyfill',
     path.join(parentDir, 'src/index.jsx')
@@ -35,6 +32,9 @@ module.exports = {
         test: /\.(html)$/,
         loader: 'html-loader'
       }, {
+        test: /\.(pdf)$/,
+        loader: 'file-loader',
+      }, {
         test: /\.(png|jpg|jpeg|gif|svg|ico|eot|ttf|woff|woff2)$/,
         include: /images/,
         loader: 'url-loader',
@@ -55,19 +55,7 @@ module.exports = {
       }
     }
   },
-  plugins: [
-    new webpack.ProvidePlugin({
-      _: 'lodash',
-    })
-  ],
   resolve: {
     extensions: ['.js', '.jsx', '.css']
-  },
-  devtool: 'eval-source-map',
-  devServer: {
-    port: 5000,
-    host: 'localhost',
-    contentBase: parentDir,
-    historyApiFallback: true
   }
-};
+}
