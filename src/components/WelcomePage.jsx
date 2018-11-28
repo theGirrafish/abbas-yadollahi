@@ -29,7 +29,7 @@ class WelcomePage extends PureComponent {
           <span className='subtitle'>Come back soon!</span>
         </div>
         <div className='time'>
-          <span className='subtitle' onClick={this.showTime}>
+          <span id='datetime' className='subtitle' onClick={this.showTime}>
             {this.state.displayTime ? this.state.date.toLocaleTimeString() : this.state.date.toLocaleDateString()}
           </span>
           <span className='subtitle'>

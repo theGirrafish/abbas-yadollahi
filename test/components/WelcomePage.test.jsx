@@ -12,7 +12,7 @@ describe('WelcomePage', () => {
 
   it('should match the time and date shown', () => {
     const wrapper = mount(<WelcomePage/>);
-    const time = wrapper.find('div.time').find('span.subtitle');
+    const time = wrapper.find('#datetime');
 
     time.props().onClick();
     expect(wrapper.state().displayTime).toEqual(false);
