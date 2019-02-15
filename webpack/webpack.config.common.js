@@ -3,13 +3,13 @@ const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const parentDir = path.join(__dirname, '../');
-const buildDir = path.join(parentDir, 'dist');
+const rootDir = path.join(__dirname, '../');
+const buildDir = path.join(rootDir, 'dist');
 
 module.exports = {
   entry: [
     'babel-polyfill',
-    path.join(parentDir, 'src/index.jsx')
+    path.join(rootDir, 'src/index.jsx')
   ],
   output: {
     path: buildDir,
@@ -33,9 +33,9 @@ module.exports = {
       }, {
         test: /\.s[a|c]ss$/,
         use: [
-          {loader: "style-loader"},
-          {loader: "css-loader", options: {sourceMap: true}},
-          {loader: "sass-loader", options: {sourceMap: true}}
+          {loader: 'style-loader'},
+          {loader: 'css-loader', options: {sourceMap: true}},
+          {loader: 'sass-loader', options: {sourceMap: true}}
         ]
       }, {
         test: /\.(html)$/,
@@ -77,11 +77,11 @@ module.exports = {
       _: 'lodash'
     }),
     new CopyWebpackPlugin([{
-      from: path.join(parentDir, 'src/assets/static'),
+      from: path.join(rootDir, 'src/assets/static'),
       to: buildDir
     }]),
     new CleanWebpackPlugin(buildDir, {
-      root: parentDir
+      root: rootDir
     })
   ]
 };

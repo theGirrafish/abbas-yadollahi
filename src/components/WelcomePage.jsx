@@ -25,7 +25,7 @@ class WelcomePage extends PureComponent {
         <div className='text'>
           <span className='title'>Abbas Yadollahi</span>
           <span className='subtitle'>Welcome!</span>
-          <span className='subtitle'>Sorry for the inconvenience, I'm currently updating my personal webpage.</span>
+          <span className='subtitle'>I'm currently updating my personal webpage.</span>
           <span className='subtitle'>Come back soon!</span>
         </div>
         <div className='time'>
