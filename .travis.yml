@@ -7,11 +7,11 @@ cache:
   directories:
   - node_modules
 install:
-- npm install
+  - npm install
 script:
-- npm run lint
-- npm run test
-- npm run build
+  - npm run lint
+  - npm run test
+  - npm run build
 deploy:
   provider: heroku
   app: abbas-yadollahi
