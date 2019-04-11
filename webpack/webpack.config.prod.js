@@ -5,7 +5,7 @@ const common = require('./webpack.config.common.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
-const parentDir = path.join(__dirname, '../');
+const rootDir = path.join(__dirname, '../');
 
 module.exports = wpMerge(common, {
   mode: 'production',
@@ -32,7 +32,7 @@ module.exports = wpMerge(common, {
   devServer: {
     port: process.env.PORT || 5000,
     compress: true,
-    contentBase: parentDir,
+    contentBase: rootDir,
     historyApiFallback: true
   }
 });

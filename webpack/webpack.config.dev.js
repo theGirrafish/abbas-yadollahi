@@ -2,7 +2,7 @@ const path = require('path');
 const wpMerge = require('webpack-merge');
 const common = require('./webpack.config.common.js');
 
-const parentDir = path.join(__dirname, '../');
+const rootDir = path.join(__dirname, '../');
 
 module.exports = wpMerge(common, {
   mode: 'development',
@@ -10,7 +10,7 @@ module.exports = wpMerge(common, {
   devServer: {
     port: 5000,
     host: 'localhost',
-    contentBase: parentDir,
+    contentBase: rootDir,
     historyApiFallback: true
   }
 });

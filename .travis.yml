@@ -5,13 +5,12 @@ node_js:
   - node
 cache:
   directories:
-  - node_modules
+    - node_modules
 install:
   - npm install
 script:
   - npm run lint
   - npm run test
-  - npm run build
 deploy:
   provider: heroku
   app: abbas-yadollahi

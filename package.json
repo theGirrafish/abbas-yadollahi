@@ -16,7 +16,6 @@
     "test": "./node_modules/.bin/jest",
     "test:watch": "./node_modules/.bin/jest --watchAll"
   },
-  "heroku-run-build-script": true,
   "author": "Abbas Yadollahi",
   "license": "UNLICENSED",
   "repository": {
